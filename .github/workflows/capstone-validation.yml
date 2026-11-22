@@ -1,0 +1,79 @@
+name: Validate IBM SpaceX Capstone
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install project dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Install Chromium for dashboard evidence
+        run: python -m playwright install --with-deps chromium
+
+      - name: Validate data, Dash figures, and Folium output
+        run: python scripts/smoke_test.py
+
+      - name: Execute machine-learning notebook
+        run: |
+          mkdir -p outputs
+          jupyter nbconvert --to notebook --execute IBM_Capstone_ML_Completed.ipynb \
+            --output executed_machine_learning.ipynb --output-dir outputs \
+            --ExecutePreprocessor.timeout=900
+
+      - name: Execute Folium notebook
+        run: |
+          jupyter nbconvert --to notebook --execute IBM_Capstone_Folium_Completed.ipynb \
+            --output executed_folium.ipynb --output-dir outputs \
+            --ExecutePreprocessor.timeout=900
+
+      - name: Capture live Plotly Dash screenshots
+        run: python scripts/capture_dash_evidence.py
+
+      - name: Check evidence files
+        run: |
+          test -s outputs/selected_model_confusion_matrix.png
+          test -s outputs/selected_model_confusion_matrix.csv
+          test -s outputs/model_test_results.csv
+          test -s outputs/spacex_launch_sites_map.html
+          test -s outputs/screenshots/dash_default.png
+          test -s outputs/screenshots/dash_filtered_site.png
+
+      - name: Publish generated evidence to main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add outputs
+          if git diff --cached --quiet; then
+            echo "No new evidence to commit."
+          else
+            git commit -m "Generate verified capstone analysis and dashboard evidence [skip ci]"
+            git push
+          fi
+
+      - name: Upload evidence artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ibm-capstone-generated-evidence
+          path: outputs/
+          if-no-files-found: error
+          retention-days: 30
