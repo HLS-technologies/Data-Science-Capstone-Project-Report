@@ -27,12 +27,12 @@ def main():
 
         # Florida close-up: show launch-site markers, coastline/rail/highway/city
         # selected points, distance labels, and connecting polylines.
-        page.evaluate(f"window['{map_var}'].setView([28.57, -80.60], 10)")
+        page.evaluate(f"window['{map_var}'].setView([28.5733, -80.6469], 12)")
         page.wait_for_timeout(1200)
         page.screenshot(path=str(OUT / "folium_proximity_florida.png"), full_page=True)
 
         # Vandenberg close-up, including its selected proximity features.
-        page.evaluate(f"window['{map_var}'].setView([34.64, -120.61], 11)")
+        page.evaluate(f"window['{map_var}'].setView([34.6328, -120.6107], 12)")
         page.wait_for_timeout(1200)
         page.screenshot(path=str(OUT / "folium_proximity_vafb.png"), full_page=True)
         browser.close()
