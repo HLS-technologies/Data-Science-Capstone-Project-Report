@@ -75,7 +75,10 @@ jobs:
           test -s outputs/eda/05_payload_mass_vs_orbit.png
           test -s outputs/eda/06_yearly_success_trend.png
           test -s outputs/spacex_launch_sites_map.html
+          test -s outputs/proximity_analysis.csv
           test -s outputs/screenshots/folium_launch_site_map.png
+          test -s outputs/screenshots/folium_proximity_florida.png
+          test -s outputs/screenshots/folium_proximity_vafb.png
           test -s outputs/screenshots/dash_default.png
           test -s outputs/screenshots/dash_filtered_site.png
 
