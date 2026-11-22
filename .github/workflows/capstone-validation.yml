@@ -58,8 +58,10 @@ jobs:
             --output executed_folium.ipynb --output-dir outputs \
             --ExecutePreprocessor.timeout=900
 
-      - name: Capture live Plotly Dash screenshots
-        run: python scripts/capture_dash_evidence.py
+      - name: Capture Folium and Plotly Dash screenshots
+        run: |
+          python scripts/capture_map_evidence.py
+          python scripts/capture_dash_evidence.py
 
       - name: Check evidence files
         run: |
@@ -73,6 +75,7 @@ jobs:
           test -s outputs/eda/05_payload_mass_vs_orbit.png
           test -s outputs/eda/06_yearly_success_trend.png
           test -s outputs/spacex_launch_sites_map.html
+          test -s outputs/screenshots/folium_launch_site_map.png
           test -s outputs/screenshots/dash_default.png
           test -s outputs/screenshots/dash_filtered_site.png
 
