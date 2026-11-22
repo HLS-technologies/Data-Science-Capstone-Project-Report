@@ -18,16 +18,17 @@ This repository contains the notebooks, applications, and reproducible evidence 
 | Plotly Dash | spacex_dash_app.py | Launch-site dropdown, payload range slider, success pie chart, payload/outcome scatter |
 | Shared data handling | src/capstone_data.py | Schema normalization and validation |
 
-## Course datasets
+## Course datasets and dataset scope
 
-The data directory contains four separate IBM exercise datasets:
+The repository keeps five separate IBM course exercise snapshots. They serve different exercises and must not be merged as if they were one table:
 
-- dataset_part_2.csv: 90 Falcon 9 records with the binary Class target.
-- dataset_part_3.csv: 90 one-hot encoded records aligned by row to dataset_part_2.csv.
-- spacex_launch_dash.csv: 56 dashboard exercise records.
-- spacex_launch_geo.csv: 56 geographical exercise records.
+- `data/Spacex.csv`: **101-row SQL exercise dataset**, with separate `Mission_Outcome` and `Landing_Outcome` fields. Used by `EDA_SQL_Analysis_Completed.ipynb`.
+- `data/dataset_part_2.csv`: **90 Falcon 9 records** with binary `Class` target (1 = successful first-stage landing; 0 = unsuccessful first-stage landing). Used for EDA and modelling.
+- `data/dataset_part_3.csv`: **90-row one-hot encoded feature matrix** aligned by row to `dataset_part_2.csv`.
+- `data/spacex_launch_dash.csv`: **56 dashboard exercise records**.
+- `data/spacex_launch_geo.csv`: **56 geographical exercise records**.
 
-These are separate course datasets and must not be combined as if they were one table. The CSVs were retrieved from a public mirror of the IBM course exercise materials: https://github.com/itsskofficial/ibm-data-science-capstone. Confirm that their contents match the versions in your own IBM Skills Network/Coursera labs before final academic submission.
+The course snapshots were retrieved from public mirrors of IBM exercise materials. The source locations and dataset-specific scope are documented in `data/README.md`. Verify these copies against the files in your own IBM Skills Network/Coursera labs before final academic submission. The SQL, modelling, dashboard, and geographical record counts intentionally differ.
 
 ## Run locally
 
@@ -47,9 +48,9 @@ Open and run IBM_Capstone_EDA_Visualization_Completed.ipynb. It generates six pl
 
 ### Folium map
 
-Run: python build_folium_map.py
+Run: `python build_folium_map.py`.
 
-Open outputs/spacex_launch_sites_map.html in a browser. The map includes launch-site reference markers, clustered historical launch markers, outcome colors, popups, layer controls, full-screen control, mini map, and distance measurement. Nearest railway/highway/city/coastline distances are not reported unless source-verified feature coordinates are supplied.
+Open `outputs/spacex_launch_sites_map.html` in a browser. The map includes launch-site reference markers, clustered launch records, green/red first-stage outcome markers, pop-ups, layer controls, fullscreen/minimap, mouse coordinates, and measurement controls. The IBM lab's selected coastline, railway, highway, and city points are stored in `data/proximity_features.csv`; the script calculates geodesic straight-line distances from the launch-site coordinates. These are not road-network or driving distances.
 
 ### Plotly Dash application
 
