@@ -137,10 +137,13 @@ def build_map(data_path, output_path, proximity_path=None):
                                 fill_color=color, fill_opacity=0.95,
                                 popup=folium.Popup(popup, max_width=320),
                                 tooltip=label).add_to(proximity_layer)
+            label_offsets = {"coastline": 10, "railway": 28, "highway": 46, "city": 64}
+            offset = label_offsets.get(r["Feature Type"], 10)
             folium.Marker(target, icon=folium.DivIcon(
-                icon_size=(120, 18), icon_anchor=(0, -2),
+                icon_size=(150, 18), icon_anchor=(-4, offset),
                 html=f'<div style="font-size:10px;color:{color};font-weight:bold;'
-                     f'text-shadow:1px 1px white;">{label}</div>'
+                     f'background:rgba(255,255,255,.72);padding:1px 3px;border-radius:3px;'
+                     f'white-space:nowrap;">{label}</div>'
             )).add_to(proximity_layer)
 
     sites_layer.add_to(m)
