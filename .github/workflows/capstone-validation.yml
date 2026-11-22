@@ -33,6 +33,11 @@ jobs:
       - name: Validate data, Dash figures, and Folium output
         run: python scripts/smoke_test.py
 
+      - name: Execute data wrangling and SQL notebooks
+        run: |
+          jupyter nbconvert --to notebook --execute Data_Wrangling_Completed.ipynb --output executed_data_wrangling.ipynb --output-dir outputs --ExecutePreprocessor.timeout=600
+          jupyter nbconvert --to notebook --execute EDA_SQL_Analysis_Completed.ipynb --output executed_eda_sql.ipynb --output-dir outputs --ExecutePreprocessor.timeout=600
+
       - name: Execute machine-learning notebook
         run: |
           mkdir -p outputs
