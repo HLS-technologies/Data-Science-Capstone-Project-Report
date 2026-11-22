@@ -1,0 +1,2 @@
+Selected model,Training rows,Testing rows,Features,Test accuracy,Test precision,Test recall,Test F1,Test Jaccard
+Support Vector Machine,72,18,83,0.8333333333333334,0.8,1.0,0.8888888888888888,0.8

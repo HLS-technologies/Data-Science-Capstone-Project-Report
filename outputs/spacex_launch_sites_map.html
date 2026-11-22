@@ -1,0 +1,1924 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_219e2d42085ebcb8330ce77897137236 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.css"/>
+    <script src="https://cdn.jsdelivr.net/gh/ljagis/leaflet-measure@2.1.7/dist/leaflet-measure.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ljagis/leaflet-measure@2.1.7/dist/leaflet-measure.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_219e2d42085ebcb8330ce77897137236" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_219e2d42085ebcb8330ce77897137236 = L.map(
+                "map_219e2d42085ebcb8330ce77897137236",
+                {
+                    center: [29.648980044464285, -87.74225182964287],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 4,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_219e2d42085ebcb8330ce77897137236);
+
+            
+
+        
+    
+            var tile_layer_6ecbbeae6128fb369cb12f7e306d4b2d = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_6ecbbeae6128fb369cb12f7e306d4b2d.addTo(map_219e2d42085ebcb8330ce77897137236);
+        
+    
+            L.control.fullscreen(
+                {"forceSeparateButton": false, "position": "topleft", "title": "Full Screen", "titleCancel": "Exit Full Screen"}
+            ).addTo(map_219e2d42085ebcb8330ce77897137236);
+        
+    
+            var tile_layer_1bdfee423b339ea3ca2bd8bbdf6aa30e = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+            var mini_map_159ebfaf8b1908c563feed008b4b98b5 = new L.Control.MiniMap(
+                tile_layer_1bdfee423b339ea3ca2bd8bbdf6aa30e,
+                {"autoToggleDisplay": false, "centerFixed": false, "collapsedHeight": 25, "collapsedWidth": 25, "height": 150, "minimized": false, "position": "bottomright", "toggleDisplay": true, "width": 150, "zoomAnimation": false, "zoomLevelOffset": -5}
+            );
+            map_219e2d42085ebcb8330ce77897137236.addControl(mini_map_159ebfaf8b1908c563feed008b4b98b5);
+        
+    
+            var measure_control_af24aa77f8571392ced1a8b984f392d7 = new L.Control.Measure(
+                {"position": "topright", "primaryAreaUnit": "sqmeters", "primaryLengthUnit": "kilometers", "secondaryAreaUnit": "acres", "secondaryLengthUnit": "miles"});
+            map_219e2d42085ebcb8330ce77897137236.addControl(measure_control_af24aa77f8571392ced1a8b984f392d7);
+
+            // Workaround for using this plugin with Leaflet>=1.8.0
+            // https://github.com/ljagis/leaflet-measure/issues/171
+            L.Control.Measure.include({
+                _setCaptureMarkerIcon: function () {
+                    // disable autopan
+                    this._captureMarker.options.autoPanOnFocus = false;
+                    // default function
+                    this._captureMarker.setIcon(
+                        L.divIcon({
+                            iconSize: this._map.getSize().multiplyBy(2)
+                        })
+                    );
+                },
+            });
+
+        
+    
+            var feature_group_2cf8d42bcf36871eec75599fe066351a = L.featureGroup(
+                {}
+            );
+        
+    
+            var marker_d43748fc2f4526459cbfac3fcbd12d69 = L.marker(
+                [28.56230197, -80.57735648],
+                {}
+            ).addTo(feature_group_2cf8d42bcf36871eec75599fe066351a);
+        
+    
+            var icon_829e26e548efa59e5cfce9b54f9da767 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "rocket", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_d43748fc2f4526459cbfac3fcbd12d69.setIcon(icon_829e26e548efa59e5cfce9b54f9da767);
+        
+    
+        var popup_0560c51c4a3f69b02180b4390f73d5cd = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_c5f4cb17ecb8ff9bb6e07875f56a384d = $(`<div id="html_c5f4cb17ecb8ff9bb6e07875f56a384d" style="width: 100.0%; height: 100.0%;"><b>CCAFS LC-40</b><br>Launch records: 26<br>Observed landing success rate: 26.9%</div>`)[0];
+                popup_0560c51c4a3f69b02180b4390f73d5cd.setContent(html_c5f4cb17ecb8ff9bb6e07875f56a384d);
+            
+        
+
+        marker_d43748fc2f4526459cbfac3fcbd12d69.bindPopup(popup_0560c51c4a3f69b02180b4390f73d5cd)
+        ;
+
+        
+    
+    
+            marker_d43748fc2f4526459cbfac3fcbd12d69.bindTooltip(
+                `<div>
+                     Launch site: CCAFS LC-40
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a3d5e67c11a02dcb27e6cb99205916f0 = L.marker(
+                [28.56319718, -80.57682003],
+                {}
+            ).addTo(feature_group_2cf8d42bcf36871eec75599fe066351a);
+        
+    
+            var icon_1b021ec326eb96b107798d12c01c9349 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "rocket", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_a3d5e67c11a02dcb27e6cb99205916f0.setIcon(icon_1b021ec326eb96b107798d12c01c9349);
+        
+    
+        var popup_c1cd5012092c25ca0d073005f741c900 = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_13e79c1174bf8b161875c6be95c706bf = $(`<div id="html_13e79c1174bf8b161875c6be95c706bf" style="width: 100.0%; height: 100.0%;"><b>CCAFS SLC-40</b><br>Launch records: 7<br>Observed landing success rate: 42.9%</div>`)[0];
+                popup_c1cd5012092c25ca0d073005f741c900.setContent(html_13e79c1174bf8b161875c6be95c706bf);
+            
+        
+
+        marker_a3d5e67c11a02dcb27e6cb99205916f0.bindPopup(popup_c1cd5012092c25ca0d073005f741c900)
+        ;
+
+        
+    
+    
+            marker_a3d5e67c11a02dcb27e6cb99205916f0.bindTooltip(
+                `<div>
+                     Launch site: CCAFS SLC-40
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d2dd2eb652c7f96f98bed3d1f8edaaa0 = L.marker(
+                [28.57325457, -80.64689529],
+                {}
+            ).addTo(feature_group_2cf8d42bcf36871eec75599fe066351a);
+        
+    
+            var icon_14f93547c7c21092db590e4cf762acd4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "rocket", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_d2dd2eb652c7f96f98bed3d1f8edaaa0.setIcon(icon_14f93547c7c21092db590e4cf762acd4);
+        
+    
+        var popup_a18f2031a3e551413c50e541a9c3fc0e = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_42610739a95f4884e73e1bae63727f94 = $(`<div id="html_42610739a95f4884e73e1bae63727f94" style="width: 100.0%; height: 100.0%;"><b>KSC LC-39A</b><br>Launch records: 13<br>Observed landing success rate: 76.9%</div>`)[0];
+                popup_a18f2031a3e551413c50e541a9c3fc0e.setContent(html_42610739a95f4884e73e1bae63727f94);
+            
+        
+
+        marker_d2dd2eb652c7f96f98bed3d1f8edaaa0.bindPopup(popup_a18f2031a3e551413c50e541a9c3fc0e)
+        ;
+
+        
+    
+    
+            marker_d2dd2eb652c7f96f98bed3d1f8edaaa0.bindTooltip(
+                `<div>
+                     Launch site: KSC LC-39A
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_25cb881aa1fa57e88d6ff1021f4e9d2b = L.marker(
+                [34.63283416, -120.61074549999998],
+                {}
+            ).addTo(feature_group_2cf8d42bcf36871eec75599fe066351a);
+        
+    
+            var icon_251caa306820f68aece4f8dcbaefe9d2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "rocket", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_25cb881aa1fa57e88d6ff1021f4e9d2b.setIcon(icon_251caa306820f68aece4f8dcbaefe9d2);
+        
+    
+        var popup_3b5ff99377a965c541a5a14f4559b4e7 = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_f9b2ae0e46c6a6e5af6a62ff722de900 = $(`<div id="html_f9b2ae0e46c6a6e5af6a62ff722de900" style="width: 100.0%; height: 100.0%;"><b>VAFB SLC-4E</b><br>Launch records: 10<br>Observed landing success rate: 40.0%</div>`)[0];
+                popup_3b5ff99377a965c541a5a14f4559b4e7.setContent(html_f9b2ae0e46c6a6e5af6a62ff722de900);
+            
+        
+
+        marker_25cb881aa1fa57e88d6ff1021f4e9d2b.bindPopup(popup_3b5ff99377a965c541a5a14f4559b4e7)
+        ;
+
+        
+    
+    
+            marker_25cb881aa1fa57e88d6ff1021f4e9d2b.bindTooltip(
+                `<div>
+                     Launch site: VAFB SLC-4E
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            feature_group_2cf8d42bcf36871eec75599fe066351a.addTo(map_219e2d42085ebcb8330ce77897137236);
+        
+    
+            var feature_group_5951dab467624461e642384b4872c5a6 = L.featureGroup(
+                {}
+            );
+        
+    
+            var marker_cluster_ed4ecffb1d746d110813a9b01f9b7173 = L.markerClusterGroup(
+                {}
+            );
+        
+    
+            var circle_marker_c643e9965b4ef57af961d95a6a6d8293 = L.circleMarker(
+                [28.56230197, -80.57735648],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_a6c52c1412f418f480372c7a30520178 = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_5dbc903eaca9a2097485a06f091e561b = $(`<div id="html_5dbc903eaca9a2097485a06f091e561b" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 1<br><b>Launch site:</b> CCAFS LC-40<br><b>Landing outcome:</b> Unsuccessful<br>Payload: 0 kg</div>`)[0];
+                popup_a6c52c1412f418f480372c7a30520178.setContent(html_5dbc903eaca9a2097485a06f091e561b);
+            
+        
+
+        circle_marker_c643e9965b4ef57af961d95a6a6d8293.bindPopup(popup_a6c52c1412f418f480372c7a30520178)
+        ;
+
+        
+    
+    
+            circle_marker_c643e9965b4ef57af961d95a6a6d8293.bindTooltip(
+                `<div>
+                     Flight 1 — Unsuccessful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_d4c09e8cbe307cbbca7b1d1ee3caacb4 = L.circleMarker(
+                [28.56230197, -80.57735648],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_2a40f934589fb3a3367f5dc12ad2c580 = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_9c2c0fa39230b2a8ddae7af3250ebe94 = $(`<div id="html_9c2c0fa39230b2a8ddae7af3250ebe94" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 2<br><b>Launch site:</b> CCAFS LC-40<br><b>Landing outcome:</b> Unsuccessful<br>Payload: 0 kg</div>`)[0];
+                popup_2a40f934589fb3a3367f5dc12ad2c580.setContent(html_9c2c0fa39230b2a8ddae7af3250ebe94);
+            
+        
+
+        circle_marker_d4c09e8cbe307cbbca7b1d1ee3caacb4.bindPopup(popup_2a40f934589fb3a3367f5dc12ad2c580)
+        ;
+
+        
+    
+    
+            circle_marker_d4c09e8cbe307cbbca7b1d1ee3caacb4.bindTooltip(
+                `<div>
+                     Flight 2 — Unsuccessful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_64275c99da59bcb72a8d6442fdfc5a81 = L.circleMarker(
+                [28.56230197, -80.57735648],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_9dcd0e711e29fb0060a51b0c57276439 = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_c30f3b409d90ccd586d830ad1aa760d7 = $(`<div id="html_c30f3b409d90ccd586d830ad1aa760d7" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 3<br><b>Launch site:</b> CCAFS LC-40<br><b>Landing outcome:</b> Unsuccessful<br>Payload: 525 kg</div>`)[0];
+                popup_9dcd0e711e29fb0060a51b0c57276439.setContent(html_c30f3b409d90ccd586d830ad1aa760d7);
+            
+        
+
+        circle_marker_64275c99da59bcb72a8d6442fdfc5a81.bindPopup(popup_9dcd0e711e29fb0060a51b0c57276439)
+        ;
+
+        
+    
+    
+            circle_marker_64275c99da59bcb72a8d6442fdfc5a81.bindTooltip(
+                `<div>
+                     Flight 3 — Unsuccessful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_547016c331ed44bb8bd59c614f644f5c = L.circleMarker(
+                [28.56230197, -80.57735648],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_310c73c0897509329158cc1519492236 = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_4f3d43642ef9810627f4f4f693ae3cb5 = $(`<div id="html_4f3d43642ef9810627f4f4f693ae3cb5" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 4<br><b>Launch site:</b> CCAFS LC-40<br><b>Landing outcome:</b> Unsuccessful<br>Payload: 500 kg</div>`)[0];
+                popup_310c73c0897509329158cc1519492236.setContent(html_4f3d43642ef9810627f4f4f693ae3cb5);
+            
+        
+
+        circle_marker_547016c331ed44bb8bd59c614f644f5c.bindPopup(popup_310c73c0897509329158cc1519492236)
+        ;
+
+        
+    
+    
+            circle_marker_547016c331ed44bb8bd59c614f644f5c.bindTooltip(
+                `<div>
+                     Flight 4 — Unsuccessful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_abefa4fdbc5dbcc1c9ff62e3dddcbe85 = L.circleMarker(
+                [28.56230197, -80.57735648],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_e97e5fd67cfef6d22dfa1d37bd743ead = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_8fa42658bdd7fdfa1be3a1289a544914 = $(`<div id="html_8fa42658bdd7fdfa1be3a1289a544914" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 5<br><b>Launch site:</b> CCAFS LC-40<br><b>Landing outcome:</b> Unsuccessful<br>Payload: 677 kg</div>`)[0];
+                popup_e97e5fd67cfef6d22dfa1d37bd743ead.setContent(html_8fa42658bdd7fdfa1be3a1289a544914);
+            
+        
+
+        circle_marker_abefa4fdbc5dbcc1c9ff62e3dddcbe85.bindPopup(popup_e97e5fd67cfef6d22dfa1d37bd743ead)
+        ;
+
+        
+    
+    
+            circle_marker_abefa4fdbc5dbcc1c9ff62e3dddcbe85.bindTooltip(
+                `<div>
+                     Flight 5 — Unsuccessful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_1364d1835cd16d849cc5cf652d9f749c = L.circleMarker(
+                [28.56230197, -80.57735648],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_d05498606838aeb9278b9a83a358f893 = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_69d862276c995686cc6ec2bf053d2c50 = $(`<div id="html_69d862276c995686cc6ec2bf053d2c50" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 7<br><b>Launch site:</b> CCAFS LC-40<br><b>Landing outcome:</b> Unsuccessful<br>Payload: 3,170 kg</div>`)[0];
+                popup_d05498606838aeb9278b9a83a358f893.setContent(html_69d862276c995686cc6ec2bf053d2c50);
+            
+        
+
+        circle_marker_1364d1835cd16d849cc5cf652d9f749c.bindPopup(popup_d05498606838aeb9278b9a83a358f893)
+        ;
+
+        
+    
+    
+            circle_marker_1364d1835cd16d849cc5cf652d9f749c.bindTooltip(
+                `<div>
+                     Flight 7 — Unsuccessful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_844e28124eb4255396cf04cfb9a46819 = L.circleMarker(
+                [28.56230197, -80.57735648],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_87c635a45125128a5045efcf650eff99 = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_2ff7699e2930e9e074749f8676711bac = $(`<div id="html_2ff7699e2930e9e074749f8676711bac" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 8<br><b>Launch site:</b> CCAFS LC-40<br><b>Landing outcome:</b> Unsuccessful<br>Payload: 3,325 kg</div>`)[0];
+                popup_87c635a45125128a5045efcf650eff99.setContent(html_2ff7699e2930e9e074749f8676711bac);
+            
+        
+
+        circle_marker_844e28124eb4255396cf04cfb9a46819.bindPopup(popup_87c635a45125128a5045efcf650eff99)
+        ;
+
+        
+    
+    
+            circle_marker_844e28124eb4255396cf04cfb9a46819.bindTooltip(
+                `<div>
+                     Flight 8 — Unsuccessful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_ceb53e24aa03ac07bc107aec3cc05b48 = L.circleMarker(
+                [28.56230197, -80.57735648],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_ae657bf802fd56c13fc93952d78a7942 = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_c51765fbdad3a413d016a4d0c68fff94 = $(`<div id="html_c51765fbdad3a413d016a4d0c68fff94" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 9<br><b>Launch site:</b> CCAFS LC-40<br><b>Landing outcome:</b> Unsuccessful<br>Payload: 2,296 kg</div>`)[0];
+                popup_ae657bf802fd56c13fc93952d78a7942.setContent(html_c51765fbdad3a413d016a4d0c68fff94);
+            
+        
+
+        circle_marker_ceb53e24aa03ac07bc107aec3cc05b48.bindPopup(popup_ae657bf802fd56c13fc93952d78a7942)
+        ;
+
+        
+    
+    
+            circle_marker_ceb53e24aa03ac07bc107aec3cc05b48.bindTooltip(
+                `<div>
+                     Flight 9 — Unsuccessful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_90513f6d8cc8bb0b71ded75b491f0dcf = L.circleMarker(
+                [28.56230197, -80.57735648],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_7495ff8e3f2e7edf401004347d9d60f0 = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_a1cb78502c2251850a323b293584116b = $(`<div id="html_a1cb78502c2251850a323b293584116b" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 10<br><b>Launch site:</b> CCAFS LC-40<br><b>Landing outcome:</b> Unsuccessful<br>Payload: 1,316 kg</div>`)[0];
+                popup_7495ff8e3f2e7edf401004347d9d60f0.setContent(html_a1cb78502c2251850a323b293584116b);
+            
+        
+
+        circle_marker_90513f6d8cc8bb0b71ded75b491f0dcf.bindPopup(popup_7495ff8e3f2e7edf401004347d9d60f0)
+        ;
+
+        
+    
+    
+            circle_marker_90513f6d8cc8bb0b71ded75b491f0dcf.bindTooltip(
+                `<div>
+                     Flight 10 — Unsuccessful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_b649a923d9d4fb9c155ec8184fd8356e = L.circleMarker(
+                [28.56230197, -80.57735648],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_1cd8bf46ebfe41fa08cebd3440308018 = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_e9eb2dcc799c769371cadcd7eeab5938 = $(`<div id="html_e9eb2dcc799c769371cadcd7eeab5938" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 11<br><b>Launch site:</b> CCAFS LC-40<br><b>Landing outcome:</b> Unsuccessful<br>Payload: 4,535 kg</div>`)[0];
+                popup_1cd8bf46ebfe41fa08cebd3440308018.setContent(html_e9eb2dcc799c769371cadcd7eeab5938);
+            
+        
+
+        circle_marker_b649a923d9d4fb9c155ec8184fd8356e.bindPopup(popup_1cd8bf46ebfe41fa08cebd3440308018)
+        ;
+
+        
+    
+    
+            circle_marker_b649a923d9d4fb9c155ec8184fd8356e.bindTooltip(
+                `<div>
+                     Flight 11 — Unsuccessful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_1e127c3271bb70397e5b1924faf564f9 = L.circleMarker(
+                [28.56230197, -80.57735648],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_94992320ac07d662a58d1325d370f838 = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_f52ed273c3c6df4767d6ac3aa6df7821 = $(`<div id="html_f52ed273c3c6df4767d6ac3aa6df7821" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 12<br><b>Launch site:</b> CCAFS LC-40<br><b>Landing outcome:</b> Unsuccessful<br>Payload: 4,428 kg</div>`)[0];
+                popup_94992320ac07d662a58d1325d370f838.setContent(html_f52ed273c3c6df4767d6ac3aa6df7821);
+            
+        
+
+        circle_marker_1e127c3271bb70397e5b1924faf564f9.bindPopup(popup_94992320ac07d662a58d1325d370f838)
+        ;
+
+        
+    
+    
+            circle_marker_1e127c3271bb70397e5b1924faf564f9.bindTooltip(
+                `<div>
+                     Flight 12 — Unsuccessful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_8e4334626ccfa0f1e577f5ed90f0ae76 = L.circleMarker(
+                [28.56230197, -80.57735648],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_4c775125a1863dc2837db6d451554840 = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_a3e11bcdd1d50a5538b9b4c249612562 = $(`<div id="html_a3e11bcdd1d50a5538b9b4c249612562" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 13<br><b>Launch site:</b> CCAFS LC-40<br><b>Landing outcome:</b> Unsuccessful<br>Payload: 2,216 kg</div>`)[0];
+                popup_4c775125a1863dc2837db6d451554840.setContent(html_a3e11bcdd1d50a5538b9b4c249612562);
+            
+        
+
+        circle_marker_8e4334626ccfa0f1e577f5ed90f0ae76.bindPopup(popup_4c775125a1863dc2837db6d451554840)
+        ;
+
+        
+    
+    
+            circle_marker_8e4334626ccfa0f1e577f5ed90f0ae76.bindTooltip(
+                `<div>
+                     Flight 13 — Unsuccessful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_e61797d189ff0f9b8edca36460b3adb9 = L.circleMarker(
+                [28.56230197, -80.57735648],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_76ff219c29207fdbe8d16801841bff74 = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_c8dcec9a79e22fe4173da9d2111d48c4 = $(`<div id="html_c8dcec9a79e22fe4173da9d2111d48c4" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 14<br><b>Launch site:</b> CCAFS LC-40<br><b>Landing outcome:</b> Unsuccessful<br>Payload: 2,395 kg</div>`)[0];
+                popup_76ff219c29207fdbe8d16801841bff74.setContent(html_c8dcec9a79e22fe4173da9d2111d48c4);
+            
+        
+
+        circle_marker_e61797d189ff0f9b8edca36460b3adb9.bindPopup(popup_76ff219c29207fdbe8d16801841bff74)
+        ;
+
+        
+    
+    
+            circle_marker_e61797d189ff0f9b8edca36460b3adb9.bindTooltip(
+                `<div>
+                     Flight 14 — Unsuccessful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_3509c23813ba8ef6eb102384715501db = L.circleMarker(
+                [28.56230197, -80.57735648],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_76a781d97c138cbeaf98cbca9faef954 = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_7b69459eff43662043407a548298fac2 = $(`<div id="html_7b69459eff43662043407a548298fac2" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 15<br><b>Launch site:</b> CCAFS LC-40<br><b>Landing outcome:</b> Unsuccessful<br>Payload: 570 kg</div>`)[0];
+                popup_76a781d97c138cbeaf98cbca9faef954.setContent(html_7b69459eff43662043407a548298fac2);
+            
+        
+
+        circle_marker_3509c23813ba8ef6eb102384715501db.bindPopup(popup_76a781d97c138cbeaf98cbca9faef954)
+        ;
+
+        
+    
+    
+            circle_marker_3509c23813ba8ef6eb102384715501db.bindTooltip(
+                `<div>
+                     Flight 15 — Unsuccessful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_8778ccbe7b3e98254c3020179824d64e = L.circleMarker(
+                [28.56230197, -80.57735648],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_aa84bf4806084e55a1000c2b858054b6 = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_94a491dd0dc93b2b64a1a43941a7820b = $(`<div id="html_94a491dd0dc93b2b64a1a43941a7820b" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 16<br><b>Launch site:</b> CCAFS LC-40<br><b>Landing outcome:</b> Unsuccessful<br>Payload: 4,159 kg</div>`)[0];
+                popup_aa84bf4806084e55a1000c2b858054b6.setContent(html_94a491dd0dc93b2b64a1a43941a7820b);
+            
+        
+
+        circle_marker_8778ccbe7b3e98254c3020179824d64e.bindPopup(popup_aa84bf4806084e55a1000c2b858054b6)
+        ;
+
+        
+    
+    
+            circle_marker_8778ccbe7b3e98254c3020179824d64e.bindTooltip(
+                `<div>
+                     Flight 16 — Unsuccessful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_4be71656ba48844e4f63c70be2816817 = L.circleMarker(
+                [28.56230197, -80.57735648],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_a9f5119a4ff90702fc0f04cc9b1b64bf = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_2bd4e0b47898d446b8600ceb624a9189 = $(`<div id="html_2bd4e0b47898d446b8600ceb624a9189" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 17<br><b>Launch site:</b> CCAFS LC-40<br><b>Landing outcome:</b> Unsuccessful<br>Payload: 1,898 kg</div>`)[0];
+                popup_a9f5119a4ff90702fc0f04cc9b1b64bf.setContent(html_2bd4e0b47898d446b8600ceb624a9189);
+            
+        
+
+        circle_marker_4be71656ba48844e4f63c70be2816817.bindPopup(popup_a9f5119a4ff90702fc0f04cc9b1b64bf)
+        ;
+
+        
+    
+    
+            circle_marker_4be71656ba48844e4f63c70be2816817.bindTooltip(
+                `<div>
+                     Flight 17 — Unsuccessful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_0d247513995cecb3cce1114e9b58acad = L.circleMarker(
+                [28.56230197, -80.57735648],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_c4f5d2d2496371b85d41167de9d75782 = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_63a46efcef7711ef8719ee03faa9a99a = $(`<div id="html_63a46efcef7711ef8719ee03faa9a99a" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 18<br><b>Launch site:</b> CCAFS LC-40<br><b>Landing outcome:</b> Unsuccessful<br>Payload: 4,707 kg</div>`)[0];
+                popup_c4f5d2d2496371b85d41167de9d75782.setContent(html_63a46efcef7711ef8719ee03faa9a99a);
+            
+        
+
+        circle_marker_0d247513995cecb3cce1114e9b58acad.bindPopup(popup_c4f5d2d2496371b85d41167de9d75782)
+        ;
+
+        
+    
+    
+            circle_marker_0d247513995cecb3cce1114e9b58acad.bindTooltip(
+                `<div>
+                     Flight 18 — Unsuccessful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_1761e81198b81837e61168b25ce3fa8a = L.circleMarker(
+                [28.56230197, -80.57735648],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_2e26009afdfdba28092982bcda253994 = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_6d6c21ad8bc665d11a6cae05ee08d12c = $(`<div id="html_6d6c21ad8bc665d11a6cae05ee08d12c" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 19<br><b>Launch site:</b> CCAFS LC-40<br><b>Landing outcome:</b> Successful<br>Payload: 1,952 kg</div>`)[0];
+                popup_2e26009afdfdba28092982bcda253994.setContent(html_6d6c21ad8bc665d11a6cae05ee08d12c);
+            
+        
+
+        circle_marker_1761e81198b81837e61168b25ce3fa8a.bindPopup(popup_2e26009afdfdba28092982bcda253994)
+        ;
+
+        
+    
+    
+            circle_marker_1761e81198b81837e61168b25ce3fa8a.bindTooltip(
+                `<div>
+                     Flight 19 — Successful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_025d7d1400a059bc5e7c31d6ed29acba = L.circleMarker(
+                [28.56230197, -80.57735648],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_26e0711d8e78b3243ee3c405eac25426 = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_bea7ec5f382f55b158d34b0db281c3b1 = $(`<div id="html_bea7ec5f382f55b158d34b0db281c3b1" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 20<br><b>Launch site:</b> CCAFS LC-40<br><b>Landing outcome:</b> Successful<br>Payload: 2,034 kg</div>`)[0];
+                popup_26e0711d8e78b3243ee3c405eac25426.setContent(html_bea7ec5f382f55b158d34b0db281c3b1);
+            
+        
+
+        circle_marker_025d7d1400a059bc5e7c31d6ed29acba.bindPopup(popup_26e0711d8e78b3243ee3c405eac25426)
+        ;
+
+        
+    
+    
+            circle_marker_025d7d1400a059bc5e7c31d6ed29acba.bindTooltip(
+                `<div>
+                     Flight 20 — Successful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_a4a536ebc76f5491ba3214698eaa915b = L.circleMarker(
+                [28.56230197, -80.57735648],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_f349f62c3c610e701d7392725513d228 = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_94a6959dab8f98170a943d40dc765a3a = $(`<div id="html_94a6959dab8f98170a943d40dc765a3a" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 22<br><b>Launch site:</b> CCAFS LC-40<br><b>Landing outcome:</b> Unsuccessful<br>Payload: 5,271 kg</div>`)[0];
+                popup_f349f62c3c610e701d7392725513d228.setContent(html_94a6959dab8f98170a943d40dc765a3a);
+            
+        
+
+        circle_marker_a4a536ebc76f5491ba3214698eaa915b.bindPopup(popup_f349f62c3c610e701d7392725513d228)
+        ;
+
+        
+    
+    
+            circle_marker_a4a536ebc76f5491ba3214698eaa915b.bindTooltip(
+                `<div>
+                     Flight 22 — Unsuccessful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_0df6d867eeea3a96d0be05da99bd24ad = L.circleMarker(
+                [28.56230197, -80.57735648],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_a663e3de60910852e11c3234d374c2d0 = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_87d882a5ca869896d24c3eb646775c59 = $(`<div id="html_87d882a5ca869896d24c3eb646775c59" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 23<br><b>Launch site:</b> CCAFS LC-40<br><b>Landing outcome:</b> Successful<br>Payload: 3,136 kg</div>`)[0];
+                popup_a663e3de60910852e11c3234d374c2d0.setContent(html_87d882a5ca869896d24c3eb646775c59);
+            
+        
+
+        circle_marker_0df6d867eeea3a96d0be05da99bd24ad.bindPopup(popup_a663e3de60910852e11c3234d374c2d0)
+        ;
+
+        
+    
+    
+            circle_marker_0df6d867eeea3a96d0be05da99bd24ad.bindTooltip(
+                `<div>
+                     Flight 23 — Successful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_f0419737451e9596a1f0c920f9c9b923 = L.circleMarker(
+                [28.56230197, -80.57735648],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_48b44520a10dd71ecefa32489b903184 = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_87dbc7ca49376069a5105219e5570c26 = $(`<div id="html_87dbc7ca49376069a5105219e5570c26" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 24<br><b>Launch site:</b> CCAFS LC-40<br><b>Landing outcome:</b> Successful<br>Payload: 4,696 kg</div>`)[0];
+                popup_48b44520a10dd71ecefa32489b903184.setContent(html_87dbc7ca49376069a5105219e5570c26);
+            
+        
+
+        circle_marker_f0419737451e9596a1f0c920f9c9b923.bindPopup(popup_48b44520a10dd71ecefa32489b903184)
+        ;
+
+        
+    
+    
+            circle_marker_f0419737451e9596a1f0c920f9c9b923.bindTooltip(
+                `<div>
+                     Flight 24 — Successful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_0386088333c9aa25752014f88f9ad86f = L.circleMarker(
+                [28.56230197, -80.57735648],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_7cf9d5842dc8e7ce6ad0a6ed84345f7f = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_b02d5006697f0b1d2bcb52a83acab707 = $(`<div id="html_b02d5006697f0b1d2bcb52a83acab707" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 25<br><b>Launch site:</b> CCAFS LC-40<br><b>Landing outcome:</b> Successful<br>Payload: 3,100 kg</div>`)[0];
+                popup_7cf9d5842dc8e7ce6ad0a6ed84345f7f.setContent(html_b02d5006697f0b1d2bcb52a83acab707);
+            
+        
+
+        circle_marker_0386088333c9aa25752014f88f9ad86f.bindPopup(popup_7cf9d5842dc8e7ce6ad0a6ed84345f7f)
+        ;
+
+        
+    
+    
+            circle_marker_0386088333c9aa25752014f88f9ad86f.bindTooltip(
+                `<div>
+                     Flight 25 — Successful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_cf15d25b7a458efbb6a405ee77272e78 = L.circleMarker(
+                [28.56230197, -80.57735648],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_c22d1472115269bcb7ee074c668451d6 = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_760fdf36dbc511048bfc5f8ef01501f5 = $(`<div id="html_760fdf36dbc511048bfc5f8ef01501f5" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 26<br><b>Launch site:</b> CCAFS LC-40<br><b>Landing outcome:</b> Unsuccessful<br>Payload: 3,600 kg</div>`)[0];
+                popup_c22d1472115269bcb7ee074c668451d6.setContent(html_760fdf36dbc511048bfc5f8ef01501f5);
+            
+        
+
+        circle_marker_cf15d25b7a458efbb6a405ee77272e78.bindPopup(popup_c22d1472115269bcb7ee074c668451d6)
+        ;
+
+        
+    
+    
+            circle_marker_cf15d25b7a458efbb6a405ee77272e78.bindTooltip(
+                `<div>
+                     Flight 26 — Unsuccessful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_7646b1d9399d07a65e48685a97f7467c = L.circleMarker(
+                [28.56230197, -80.57735648],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_0ec77dc9be7e585f7d201999bdc236af = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_a22d18fc2086f758c8bd0e599e402af7 = $(`<div id="html_a22d18fc2086f758c8bd0e599e402af7" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 27<br><b>Launch site:</b> CCAFS LC-40<br><b>Landing outcome:</b> Successful<br>Payload: 2,257 kg</div>`)[0];
+                popup_0ec77dc9be7e585f7d201999bdc236af.setContent(html_a22d18fc2086f758c8bd0e599e402af7);
+            
+        
+
+        circle_marker_7646b1d9399d07a65e48685a97f7467c.bindPopup(popup_0ec77dc9be7e585f7d201999bdc236af)
+        ;
+
+        
+    
+    
+            circle_marker_7646b1d9399d07a65e48685a97f7467c.bindTooltip(
+                `<div>
+                     Flight 27 — Successful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_789bc2f3a3b4b1ebb66ac68dd47ef408 = L.circleMarker(
+                [28.56230197, -80.57735648],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_25c609f8e4b25be7c3b460d43dd63426 = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_3725ca3a9e4bca4af2bb11f95ced00c5 = $(`<div id="html_3725ca3a9e4bca4af2bb11f95ced00c5" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 28<br><b>Launch site:</b> CCAFS LC-40<br><b>Landing outcome:</b> Successful<br>Payload: 4,600 kg</div>`)[0];
+                popup_25c609f8e4b25be7c3b460d43dd63426.setContent(html_3725ca3a9e4bca4af2bb11f95ced00c5);
+            
+        
+
+        circle_marker_789bc2f3a3b4b1ebb66ac68dd47ef408.bindPopup(popup_25c609f8e4b25be7c3b460d43dd63426)
+        ;
+
+        
+    
+    
+            circle_marker_789bc2f3a3b4b1ebb66ac68dd47ef408.bindTooltip(
+                `<div>
+                     Flight 28 — Successful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_4af4d01aedf83f655f727efa6dcfb7ac = L.circleMarker(
+                [34.63283416, -120.6107455],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_d93ecb66fd5329a4a62bce239d13a497 = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_10803cdca4a77874e1605e8dec81d943 = $(`<div id="html_10803cdca4a77874e1605e8dec81d943" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 6<br><b>Launch site:</b> VAFB SLC-4E<br><b>Landing outcome:</b> Unsuccessful<br>Payload: 500 kg</div>`)[0];
+                popup_d93ecb66fd5329a4a62bce239d13a497.setContent(html_10803cdca4a77874e1605e8dec81d943);
+            
+        
+
+        circle_marker_4af4d01aedf83f655f727efa6dcfb7ac.bindPopup(popup_d93ecb66fd5329a4a62bce239d13a497)
+        ;
+
+        
+    
+    
+            circle_marker_4af4d01aedf83f655f727efa6dcfb7ac.bindTooltip(
+                `<div>
+                     Flight 6 — Unsuccessful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_65c9c7d0b0e9cb228b11264af64134fa = L.circleMarker(
+                [34.63283416, -120.6107455],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_c0ba6021f7b1af4b89760ce867bae71d = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_d4cc2ec3c500c4508489f4e79570e0c1 = $(`<div id="html_d4cc2ec3c500c4508489f4e79570e0c1" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 21<br><b>Launch site:</b> VAFB SLC-4E<br><b>Landing outcome:</b> Unsuccessful<br>Payload: 553 kg</div>`)[0];
+                popup_c0ba6021f7b1af4b89760ce867bae71d.setContent(html_d4cc2ec3c500c4508489f4e79570e0c1);
+            
+        
+
+        circle_marker_65c9c7d0b0e9cb228b11264af64134fa.bindPopup(popup_c0ba6021f7b1af4b89760ce867bae71d)
+        ;
+
+        
+    
+    
+            circle_marker_65c9c7d0b0e9cb228b11264af64134fa.bindTooltip(
+                `<div>
+                     Flight 21 — Unsuccessful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_2177b337633ef6bdd9096f69a7c85267 = L.circleMarker(
+                [34.63283416, -120.6107455],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_149895cab07161797f368b129baeea58 = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_7c9c60f61732ba40a97a130b4f0a30d0 = $(`<div id="html_7c9c60f61732ba40a97a130b4f0a30d0" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 29<br><b>Launch site:</b> VAFB SLC-4E<br><b>Landing outcome:</b> Successful<br>Payload: 9,600 kg</div>`)[0];
+                popup_149895cab07161797f368b129baeea58.setContent(html_7c9c60f61732ba40a97a130b4f0a30d0);
+            
+        
+
+        circle_marker_2177b337633ef6bdd9096f69a7c85267.bindPopup(popup_149895cab07161797f368b129baeea58)
+        ;
+
+        
+    
+    
+            circle_marker_2177b337633ef6bdd9096f69a7c85267.bindTooltip(
+                `<div>
+                     Flight 29 — Successful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_fffcf28cad8d60a37e0ec2d6a31900b2 = L.circleMarker(
+                [34.63283416, -120.6107455],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_f9a59240bc2401c28346dc87316055d5 = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_da6cb9b7ea162ce3c9d4d36fccf1675c = $(`<div id="html_da6cb9b7ea162ce3c9d4d36fccf1675c" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 37<br><b>Launch site:</b> VAFB SLC-4E<br><b>Landing outcome:</b> Successful<br>Payload: 9,600 kg</div>`)[0];
+                popup_f9a59240bc2401c28346dc87316055d5.setContent(html_da6cb9b7ea162ce3c9d4d36fccf1675c);
+            
+        
+
+        circle_marker_fffcf28cad8d60a37e0ec2d6a31900b2.bindPopup(popup_f9a59240bc2401c28346dc87316055d5)
+        ;
+
+        
+    
+    
+            circle_marker_fffcf28cad8d60a37e0ec2d6a31900b2.bindTooltip(
+                `<div>
+                     Flight 37 — Successful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_6e33476eece6393942aadf09c74d2c2c = L.circleMarker(
+                [34.63283416, -120.6107455],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_0c164a7044c677394e9234f9c52f1134 = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_e263e61f5baee726caea7a4056cb5bbe = $(`<div id="html_e263e61f5baee726caea7a4056cb5bbe" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 40<br><b>Launch site:</b> VAFB SLC-4E<br><b>Landing outcome:</b> Successful<br>Payload: 475 kg</div>`)[0];
+                popup_0c164a7044c677394e9234f9c52f1134.setContent(html_e263e61f5baee726caea7a4056cb5bbe);
+            
+        
+
+        circle_marker_6e33476eece6393942aadf09c74d2c2c.bindPopup(popup_0c164a7044c677394e9234f9c52f1134)
+        ;
+
+        
+    
+    
+            circle_marker_6e33476eece6393942aadf09c74d2c2c.bindTooltip(
+                `<div>
+                     Flight 40 — Successful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_81d78845396777c592e6ae26e868b574 = L.circleMarker(
+                [34.63283416, -120.6107455],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_91ee2e00015bde965f9287168b877630 = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_f7a3035e66aeabad9de7dc4e8b9cb960 = $(`<div id="html_f7a3035e66aeabad9de7dc4e8b9cb960" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 42<br><b>Launch site:</b> VAFB SLC-4E<br><b>Landing outcome:</b> Successful<br>Payload: 9,600 kg</div>`)[0];
+                popup_91ee2e00015bde965f9287168b877630.setContent(html_f7a3035e66aeabad9de7dc4e8b9cb960);
+            
+        
+
+        circle_marker_81d78845396777c592e6ae26e868b574.bindPopup(popup_91ee2e00015bde965f9287168b877630)
+        ;
+
+        
+    
+    
+            circle_marker_81d78845396777c592e6ae26e868b574.bindTooltip(
+                `<div>
+                     Flight 42 — Successful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_fd8ccac6b4139b1e0fed3d8dec5b4f28 = L.circleMarker(
+                [34.63283416, -120.6107455],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_5d94b7f070f600c474de9137e99d4b8a = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_7a5c0b8bf024c97dad2ed6198b7735fa = $(`<div id="html_7a5c0b8bf024c97dad2ed6198b7735fa" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 46<br><b>Launch site:</b> VAFB SLC-4E<br><b>Landing outcome:</b> Unsuccessful<br>Payload: 9,600 kg</div>`)[0];
+                popup_5d94b7f070f600c474de9137e99d4b8a.setContent(html_7a5c0b8bf024c97dad2ed6198b7735fa);
+            
+        
+
+        circle_marker_fd8ccac6b4139b1e0fed3d8dec5b4f28.bindPopup(popup_5d94b7f070f600c474de9137e99d4b8a)
+        ;
+
+        
+    
+    
+            circle_marker_fd8ccac6b4139b1e0fed3d8dec5b4f28.bindTooltip(
+                `<div>
+                     Flight 46 — Unsuccessful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_a2deaf1f993a925a9d952ad20fdc8a57 = L.circleMarker(
+                [34.63283416, -120.6107455],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_0358a65b2309f3e30a3f29f2dd87fa8d = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_7b254907365936bc5e47c2f782cde742 = $(`<div id="html_7b254907365936bc5e47c2f782cde742" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 49<br><b>Launch site:</b> VAFB SLC-4E<br><b>Landing outcome:</b> Unsuccessful<br>Payload: 2,150 kg</div>`)[0];
+                popup_0358a65b2309f3e30a3f29f2dd87fa8d.setContent(html_7b254907365936bc5e47c2f782cde742);
+            
+        
+
+        circle_marker_a2deaf1f993a925a9d952ad20fdc8a57.bindPopup(popup_0358a65b2309f3e30a3f29f2dd87fa8d)
+        ;
+
+        
+    
+    
+            circle_marker_a2deaf1f993a925a9d952ad20fdc8a57.bindTooltip(
+                `<div>
+                     Flight 49 — Unsuccessful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_58ff9f079c67e3a7ef38f145e6770cb4 = L.circleMarker(
+                [34.63283416, -120.6107455],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_e6b92021b4910ba329a7a1532075454f = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_e5aec4bf0eed63a3c5ac8122671dc798 = $(`<div id="html_e5aec4bf0eed63a3c5ac8122671dc798" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 51<br><b>Launch site:</b> VAFB SLC-4E<br><b>Landing outcome:</b> Unsuccessful<br>Payload: 9,600 kg</div>`)[0];
+                popup_e6b92021b4910ba329a7a1532075454f.setContent(html_e5aec4bf0eed63a3c5ac8122671dc798);
+            
+        
+
+        circle_marker_58ff9f079c67e3a7ef38f145e6770cb4.bindPopup(popup_e6b92021b4910ba329a7a1532075454f)
+        ;
+
+        
+    
+    
+            circle_marker_58ff9f079c67e3a7ef38f145e6770cb4.bindTooltip(
+                `<div>
+                     Flight 51 — Unsuccessful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_dd02011a572f996e4baa5b441f5c0a42 = L.circleMarker(
+                [34.63283416, -120.6107455],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_25ed36b59ebbae553a125efbf86821f3 = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_f0580296ec19a4121530c9c61f9ac525 = $(`<div id="html_f0580296ec19a4121530c9c61f9ac525" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 55<br><b>Launch site:</b> VAFB SLC-4E<br><b>Landing outcome:</b> Unsuccessful<br>Payload: 6,460 kg</div>`)[0];
+                popup_25ed36b59ebbae553a125efbf86821f3.setContent(html_f0580296ec19a4121530c9c61f9ac525);
+            
+        
+
+        circle_marker_dd02011a572f996e4baa5b441f5c0a42.bindPopup(popup_25ed36b59ebbae553a125efbf86821f3)
+        ;
+
+        
+    
+    
+            circle_marker_dd02011a572f996e4baa5b441f5c0a42.bindTooltip(
+                `<div>
+                     Flight 55 — Unsuccessful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_4c6748ed2c4ba451739b90e19092fea0 = L.circleMarker(
+                [28.57325457, -80.64689529],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_7f3fb075a7fccd7856e568682e3b6d90 = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_10930b5ab7ded94db93dc0901e91e65f = $(`<div id="html_10930b5ab7ded94db93dc0901e91e65f" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 30<br><b>Launch site:</b> KSC LC-39A<br><b>Landing outcome:</b> Successful<br>Payload: 2,490 kg</div>`)[0];
+                popup_7f3fb075a7fccd7856e568682e3b6d90.setContent(html_10930b5ab7ded94db93dc0901e91e65f);
+            
+        
+
+        circle_marker_4c6748ed2c4ba451739b90e19092fea0.bindPopup(popup_7f3fb075a7fccd7856e568682e3b6d90)
+        ;
+
+        
+    
+    
+            circle_marker_4c6748ed2c4ba451739b90e19092fea0.bindTooltip(
+                `<div>
+                     Flight 30 — Successful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_287a45ec77f07378ce4881c769f6fe10 = L.circleMarker(
+                [28.57325457, -80.64689529],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_a800a9701fbd9cf15d3fa50943c11d9c = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_e23c63a128f7741b9e022c81dfef1e82 = $(`<div id="html_e23c63a128f7741b9e022c81dfef1e82" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 31<br><b>Launch site:</b> KSC LC-39A<br><b>Landing outcome:</b> Unsuccessful<br>Payload: 5,600 kg</div>`)[0];
+                popup_a800a9701fbd9cf15d3fa50943c11d9c.setContent(html_e23c63a128f7741b9e022c81dfef1e82);
+            
+        
+
+        circle_marker_287a45ec77f07378ce4881c769f6fe10.bindPopup(popup_a800a9701fbd9cf15d3fa50943c11d9c)
+        ;
+
+        
+    
+    
+            circle_marker_287a45ec77f07378ce4881c769f6fe10.bindTooltip(
+                `<div>
+                     Flight 31 — Unsuccessful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_0551af5785ec0e4548d84b8a1d294fcc = L.circleMarker(
+                [28.57325457, -80.64689529],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_218d29ca90fe1ddd526a04ce1a4b3d2f = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_356125a5262f9f31f72f19a96fac80b9 = $(`<div id="html_356125a5262f9f31f72f19a96fac80b9" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 32<br><b>Launch site:</b> KSC LC-39A<br><b>Landing outcome:</b> Successful<br>Payload: 5,300 kg</div>`)[0];
+                popup_218d29ca90fe1ddd526a04ce1a4b3d2f.setContent(html_356125a5262f9f31f72f19a96fac80b9);
+            
+        
+
+        circle_marker_0551af5785ec0e4548d84b8a1d294fcc.bindPopup(popup_218d29ca90fe1ddd526a04ce1a4b3d2f)
+        ;
+
+        
+    
+    
+            circle_marker_0551af5785ec0e4548d84b8a1d294fcc.bindTooltip(
+                `<div>
+                     Flight 32 — Successful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_ae13c29ad8f821e877ef75a970421c1a = L.circleMarker(
+                [28.57325457, -80.64689529],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_5f359f41a57e72b70734d381c6eedfee = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_b5f884678bbca13d551bf9ce96f9fdeb = $(`<div id="html_b5f884678bbca13d551bf9ce96f9fdeb" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 33<br><b>Launch site:</b> KSC LC-39A<br><b>Landing outcome:</b> Successful<br>Payload: 3,697 kg</div>`)[0];
+                popup_5f359f41a57e72b70734d381c6eedfee.setContent(html_b5f884678bbca13d551bf9ce96f9fdeb);
+            
+        
+
+        circle_marker_ae13c29ad8f821e877ef75a970421c1a.bindPopup(popup_5f359f41a57e72b70734d381c6eedfee)
+        ;
+
+        
+    
+    
+            circle_marker_ae13c29ad8f821e877ef75a970421c1a.bindTooltip(
+                `<div>
+                     Flight 33 — Successful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_1080051ce1b8ee85e673445433f64e16 = L.circleMarker(
+                [28.57325457, -80.64689529],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_0c4fe4d371e286979ede188f59073b4b = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_0e21f28a318720ca5e63bab6c77bb7b5 = $(`<div id="html_0e21f28a318720ca5e63bab6c77bb7b5" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 34<br><b>Launch site:</b> KSC LC-39A<br><b>Landing outcome:</b> Unsuccessful<br>Payload: 6,070 kg</div>`)[0];
+                popup_0c4fe4d371e286979ede188f59073b4b.setContent(html_0e21f28a318720ca5e63bab6c77bb7b5);
+            
+        
+
+        circle_marker_1080051ce1b8ee85e673445433f64e16.bindPopup(popup_0c4fe4d371e286979ede188f59073b4b)
+        ;
+
+        
+    
+    
+            circle_marker_1080051ce1b8ee85e673445433f64e16.bindTooltip(
+                `<div>
+                     Flight 34 — Unsuccessful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_24dd01be6a5b00ad85e9a7fc6b4af742 = L.circleMarker(
+                [28.57325457, -80.64689529],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_6b34cdede3f8fa464ba0ef19656190a2 = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_965d7d82728fe94c971214f0496807b7 = $(`<div id="html_965d7d82728fe94c971214f0496807b7" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 35<br><b>Launch site:</b> KSC LC-39A<br><b>Landing outcome:</b> Successful<br>Payload: 2,708 kg</div>`)[0];
+                popup_6b34cdede3f8fa464ba0ef19656190a2.setContent(html_965d7d82728fe94c971214f0496807b7);
+            
+        
+
+        circle_marker_24dd01be6a5b00ad85e9a7fc6b4af742.bindPopup(popup_6b34cdede3f8fa464ba0ef19656190a2)
+        ;
+
+        
+    
+    
+            circle_marker_24dd01be6a5b00ad85e9a7fc6b4af742.bindTooltip(
+                `<div>
+                     Flight 35 — Successful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_cec99b65b70d1aec600076c55cdf52f0 = L.circleMarker(
+                [28.57325457, -80.64689529],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_47935685b4261d57928c65e8843575a5 = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_568b0a6f62154fab4c0ddd2fe904a15c = $(`<div id="html_568b0a6f62154fab4c0ddd2fe904a15c" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 36<br><b>Launch site:</b> KSC LC-39A<br><b>Landing outcome:</b> Successful<br>Payload: 3,669 kg</div>`)[0];
+                popup_47935685b4261d57928c65e8843575a5.setContent(html_568b0a6f62154fab4c0ddd2fe904a15c);
+            
+        
+
+        circle_marker_cec99b65b70d1aec600076c55cdf52f0.bindPopup(popup_47935685b4261d57928c65e8843575a5)
+        ;
+
+        
+    
+    
+            circle_marker_cec99b65b70d1aec600076c55cdf52f0.bindTooltip(
+                `<div>
+                     Flight 36 — Successful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_967065a10d4a7e6b5d038b16496ca100 = L.circleMarker(
+                [28.57325457, -80.64689529],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_90f67681b46c12cb18e097d2a8624a72 = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_d583fd7a06753a2cea030d324d6b5644 = $(`<div id="html_d583fd7a06753a2cea030d324d6b5644" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 38<br><b>Launch site:</b> KSC LC-39A<br><b>Landing outcome:</b> Unsuccessful<br>Payload: 6,761 kg</div>`)[0];
+                popup_90f67681b46c12cb18e097d2a8624a72.setContent(html_d583fd7a06753a2cea030d324d6b5644);
+            
+        
+
+        circle_marker_967065a10d4a7e6b5d038b16496ca100.bindPopup(popup_90f67681b46c12cb18e097d2a8624a72)
+        ;
+
+        
+    
+    
+            circle_marker_967065a10d4a7e6b5d038b16496ca100.bindTooltip(
+                `<div>
+                     Flight 38 — Unsuccessful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_45cb4554f34a6ddfbb23d09cb2754193 = L.circleMarker(
+                [28.57325457, -80.64689529],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_61dceb75cffde446140ed3edd1c07331 = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_89a72c95f3c94a94449f203bbc5b2b6b = $(`<div id="html_89a72c95f3c94a94449f203bbc5b2b6b" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 39<br><b>Launch site:</b> KSC LC-39A<br><b>Landing outcome:</b> Successful<br>Payload: 3,310 kg</div>`)[0];
+                popup_61dceb75cffde446140ed3edd1c07331.setContent(html_89a72c95f3c94a94449f203bbc5b2b6b);
+            
+        
+
+        circle_marker_45cb4554f34a6ddfbb23d09cb2754193.bindPopup(popup_61dceb75cffde446140ed3edd1c07331)
+        ;
+
+        
+    
+    
+            circle_marker_45cb4554f34a6ddfbb23d09cb2754193.bindTooltip(
+                `<div>
+                     Flight 39 — Successful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_2b41947e97fba13dd7c171e6a2712a34 = L.circleMarker(
+                [28.57325457, -80.64689529],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_9ff0ba93ad6b869af2b0772e7cee382f = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_ea1d08164c2b18e95d35f772c060c7d5 = $(`<div id="html_ea1d08164c2b18e95d35f772c060c7d5" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 41<br><b>Launch site:</b> KSC LC-39A<br><b>Landing outcome:</b> Successful<br>Payload: 4,990 kg</div>`)[0];
+                popup_9ff0ba93ad6b869af2b0772e7cee382f.setContent(html_ea1d08164c2b18e95d35f772c060c7d5);
+            
+        
+
+        circle_marker_2b41947e97fba13dd7c171e6a2712a34.bindPopup(popup_9ff0ba93ad6b869af2b0772e7cee382f)
+        ;
+
+        
+    
+    
+            circle_marker_2b41947e97fba13dd7c171e6a2712a34.bindTooltip(
+                `<div>
+                     Flight 41 — Successful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_00bb7b3924191eb697f7b07068e19ac9 = L.circleMarker(
+                [28.57325457, -80.64689529],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_f80c0d8975c7a7de6dd27f2a861807bd = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_dcef24ad2a0b219a63ac15406f0c06e4 = $(`<div id="html_dcef24ad2a0b219a63ac15406f0c06e4" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 43<br><b>Launch site:</b> KSC LC-39A<br><b>Landing outcome:</b> Successful<br>Payload: 5,200 kg</div>`)[0];
+                popup_f80c0d8975c7a7de6dd27f2a861807bd.setContent(html_dcef24ad2a0b219a63ac15406f0c06e4);
+            
+        
+
+        circle_marker_00bb7b3924191eb697f7b07068e19ac9.bindPopup(popup_f80c0d8975c7a7de6dd27f2a861807bd)
+        ;
+
+        
+    
+    
+            circle_marker_00bb7b3924191eb697f7b07068e19ac9.bindTooltip(
+                `<div>
+                     Flight 43 — Successful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_15c4530329f32a000972619636d3c5f9 = L.circleMarker(
+                [28.57325457, -80.64689529],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_724c6c307609be065f049718334b612c = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_6bef65fbe979ba4f1a4eb92625f50efb = $(`<div id="html_6bef65fbe979ba4f1a4eb92625f50efb" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 44<br><b>Launch site:</b> KSC LC-39A<br><b>Landing outcome:</b> Successful<br>Payload: 3,500 kg</div>`)[0];
+                popup_724c6c307609be065f049718334b612c.setContent(html_6bef65fbe979ba4f1a4eb92625f50efb);
+            
+        
+
+        circle_marker_15c4530329f32a000972619636d3c5f9.bindPopup(popup_724c6c307609be065f049718334b612c)
+        ;
+
+        
+    
+    
+            circle_marker_15c4530329f32a000972619636d3c5f9.bindTooltip(
+                `<div>
+                     Flight 44 — Successful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_778a24bba2e622a35bd46a3eb2849a8a = L.circleMarker(
+                [28.57325457, -80.64689529],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_e0f187efe1a8ce158ddce761afcf90ef = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_8a81b8f681a613d0abfb8014a60ffdd7 = $(`<div id="html_8a81b8f681a613d0abfb8014a60ffdd7" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 54<br><b>Launch site:</b> KSC LC-39A<br><b>Landing outcome:</b> Successful<br>Payload: 3,600 kg</div>`)[0];
+                popup_e0f187efe1a8ce158ddce761afcf90ef.setContent(html_8a81b8f681a613d0abfb8014a60ffdd7);
+            
+        
+
+        circle_marker_778a24bba2e622a35bd46a3eb2849a8a.bindPopup(popup_e0f187efe1a8ce158ddce761afcf90ef)
+        ;
+
+        
+    
+    
+            circle_marker_778a24bba2e622a35bd46a3eb2849a8a.bindTooltip(
+                `<div>
+                     Flight 54 — Successful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_9a322ab65a5f001c4ed67e5b78c4e91a = L.circleMarker(
+                [28.56319718, -80.57682003],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_1bdfabe2d39b176f3f4b30a111616dc1 = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_ef7408bdd90090ad074877908fc36a7a = $(`<div id="html_ef7408bdd90090ad074877908fc36a7a" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 45<br><b>Launch site:</b> CCAFS SLC-40<br><b>Landing outcome:</b> Successful<br>Payload: 2,205 kg</div>`)[0];
+                popup_1bdfabe2d39b176f3f4b30a111616dc1.setContent(html_ef7408bdd90090ad074877908fc36a7a);
+            
+        
+
+        circle_marker_9a322ab65a5f001c4ed67e5b78c4e91a.bindPopup(popup_1bdfabe2d39b176f3f4b30a111616dc1)
+        ;
+
+        
+    
+    
+            circle_marker_9a322ab65a5f001c4ed67e5b78c4e91a.bindTooltip(
+                `<div>
+                     Flight 45 — Successful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_524c420021412b5eca469ce156f6126e = L.circleMarker(
+                [28.56319718, -80.57682003],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_9a297a0069db97f9c5dafb2135dc61eb = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_39a8014844cf5b933f56b33fa93e6d9a = $(`<div id="html_39a8014844cf5b933f56b33fa93e6d9a" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 47<br><b>Launch site:</b> CCAFS SLC-40<br><b>Landing outcome:</b> Successful<br>Payload: 3,697 kg</div>`)[0];
+                popup_9a297a0069db97f9c5dafb2135dc61eb.setContent(html_39a8014844cf5b933f56b33fa93e6d9a);
+            
+        
+
+        circle_marker_524c420021412b5eca469ce156f6126e.bindPopup(popup_9a297a0069db97f9c5dafb2135dc61eb)
+        ;
+
+        
+    
+    
+            circle_marker_524c420021412b5eca469ce156f6126e.bindTooltip(
+                `<div>
+                     Flight 47 — Successful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_48c686868ed51463ea4c9ffaca14163e = L.circleMarker(
+                [28.56319718, -80.57682003],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_7fb03dd09799ed959671d44b86ad94e8 = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_64c4b5ab3fc5ff1a402175f38cdd18b8 = $(`<div id="html_64c4b5ab3fc5ff1a402175f38cdd18b8" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 48<br><b>Launch site:</b> CCAFS SLC-40<br><b>Landing outcome:</b> Unsuccessful<br>Payload: 4,230 kg</div>`)[0];
+                popup_7fb03dd09799ed959671d44b86ad94e8.setContent(html_64c4b5ab3fc5ff1a402175f38cdd18b8);
+            
+        
+
+        circle_marker_48c686868ed51463ea4c9ffaca14163e.bindPopup(popup_7fb03dd09799ed959671d44b86ad94e8)
+        ;
+
+        
+    
+    
+            circle_marker_48c686868ed51463ea4c9ffaca14163e.bindTooltip(
+                `<div>
+                     Flight 48 — Unsuccessful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_10d52a111919f4069752eb9511a32145 = L.circleMarker(
+                [28.56319718, -80.57682003],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_f5fcbf87752ce47986ac2d0d43471ff4 = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_1e95995350ed25ed3dd9d0dd4526af27 = $(`<div id="html_1e95995350ed25ed3dd9d0dd4526af27" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 50<br><b>Launch site:</b> CCAFS SLC-40<br><b>Landing outcome:</b> Unsuccessful<br>Payload: 6,092 kg</div>`)[0];
+                popup_f5fcbf87752ce47986ac2d0d43471ff4.setContent(html_1e95995350ed25ed3dd9d0dd4526af27);
+            
+        
+
+        circle_marker_10d52a111919f4069752eb9511a32145.bindPopup(popup_f5fcbf87752ce47986ac2d0d43471ff4)
+        ;
+
+        
+    
+    
+            circle_marker_10d52a111919f4069752eb9511a32145.bindTooltip(
+                `<div>
+                     Flight 50 — Unsuccessful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_604c20fd574c7872c3ce917f6bc8b786 = L.circleMarker(
+                [28.56319718, -80.57682003],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_7ea830760cd56f6815de48c00cbb08c0 = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_229189a10d0f2baf041b1b4336abd4dc = $(`<div id="html_229189a10d0f2baf041b1b4336abd4dc" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 52<br><b>Launch site:</b> CCAFS SLC-40<br><b>Landing outcome:</b> Unsuccessful<br>Payload: 2,647 kg</div>`)[0];
+                popup_7ea830760cd56f6815de48c00cbb08c0.setContent(html_229189a10d0f2baf041b1b4336abd4dc);
+            
+        
+
+        circle_marker_604c20fd574c7872c3ce917f6bc8b786.bindPopup(popup_7ea830760cd56f6815de48c00cbb08c0)
+        ;
+
+        
+    
+    
+            circle_marker_604c20fd574c7872c3ce917f6bc8b786.bindTooltip(
+                `<div>
+                     Flight 52 — Unsuccessful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_7ff049acbd8918619b779db2b98e5506 = L.circleMarker(
+                [28.56319718, -80.57682003],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_4d4d4e0fc7eec90eed9fba78b4702855 = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_0a96d83f8a0ab62edad068a2b45c0b6a = $(`<div id="html_0a96d83f8a0ab62edad068a2b45c0b6a" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 53<br><b>Launch site:</b> CCAFS SLC-40<br><b>Landing outcome:</b> Successful<br>Payload: 362 kg</div>`)[0];
+                popup_4d4d4e0fc7eec90eed9fba78b4702855.setContent(html_0a96d83f8a0ab62edad068a2b45c0b6a);
+            
+        
+
+        circle_marker_7ff049acbd8918619b779db2b98e5506.bindPopup(popup_4d4d4e0fc7eec90eed9fba78b4702855)
+        ;
+
+        
+    
+    
+            circle_marker_7ff049acbd8918619b779db2b98e5506.bindTooltip(
+                `<div>
+                     Flight 53 — Successful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_1b2d7fbe003ed9b70739fb1a193f029a = L.circleMarker(
+                [28.56319718, -80.57682003],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.78, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ed4ecffb1d746d110813a9b01f9b7173);
+        
+    
+        var popup_af207ffe3d0b0880e110296c4ec56ea0 = L.popup({"maxWidth": 320});
+
+        
+            
+                var html_f4f5d897b8378554a80892b1a960b78c = $(`<div id="html_f4f5d897b8378554a80892b1a960b78c" style="width: 100.0%; height: 100.0%;"><b>Flight:</b> 56<br><b>Launch site:</b> CCAFS SLC-40<br><b>Landing outcome:</b> Unsuccessful<br>Payload: 5,384 kg</div>`)[0];
+                popup_af207ffe3d0b0880e110296c4ec56ea0.setContent(html_f4f5d897b8378554a80892b1a960b78c);
+            
+        
+
+        circle_marker_1b2d7fbe003ed9b70739fb1a193f029a.bindPopup(popup_af207ffe3d0b0880e110296c4ec56ea0)
+        ;
+
+        
+    
+    
+            circle_marker_1b2d7fbe003ed9b70739fb1a193f029a.bindTooltip(
+                `<div>
+                     Flight 56 — Unsuccessful
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            marker_cluster_ed4ecffb1d746d110813a9b01f9b7173.addTo(feature_group_5951dab467624461e642384b4872c5a6);
+        
+    
+            feature_group_5951dab467624461e642384b4872c5a6.addTo(map_219e2d42085ebcb8330ce77897137236);
+        
+    
+            var layer_control_24a9d4fee60c62a39ba3fa72c7b38a6a_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_6ecbbeae6128fb369cb12f7e306d4b2d,
+                },
+                overlays :  {
+                    "Launch-site reference markers" : feature_group_2cf8d42bcf36871eec75599fe066351a,
+                    "Launch records (clustered)" : feature_group_5951dab467624461e642384b4872c5a6,
+                },
+            };
+            let layer_control_24a9d4fee60c62a39ba3fa72c7b38a6a = L.control.layers(
+                layer_control_24a9d4fee60c62a39ba3fa72c7b38a6a_layers.base_layers,
+                layer_control_24a9d4fee60c62a39ba3fa72c7b38a6a_layers.overlays,
+                {"autoZIndex": true, "collapsed": false, "position": "topright"}
+            ).addTo(map_219e2d42085ebcb8330ce77897137236);
+
+        
+</script>
+</html>

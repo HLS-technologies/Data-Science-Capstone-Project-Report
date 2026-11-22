@@ -1,0 +1,5 @@
+Model,Best CV accuracy,CV accuracy std,CV F1,CV Jaccard,Best parameters
+Support Vector Machine,0.8767857142857143,0.13084546501230263,0.9103030303030302,0.85,"{'model__C': 1, 'model__gamma': 'scale', 'model__kernel': 'sigmoid'}"
+K-Nearest Neighbors,0.8625,0.12424516990570685,0.8991919191919191,0.8300000000000001,"{'model__n_neighbors': 9, 'model__p': 1, 'model__weights': 'uniform'}"
+Decision Tree,0.8482142857142858,0.15996850774257962,0.8925252525252525,0.822857142857143,"{'model__criterion': 'gini', 'model__max_depth': 3, 'model__min_samples_leaf': 4, 'model__min_samples_split': 2}"
+Logistic Regression,0.8482142857142858,0.15996850774257962,0.8893506493506493,0.8178571428571428,"{'model__C': 0.1, 'model__solver': 'lbfgs'}"
