@@ -46,7 +46,12 @@ def main():
             page.wait_for_timeout(1200)
             page.screenshot(path=str(out / "dash_default.png"), full_page=True)
             page.locator("#site-dropdown").click()
-            page.get_by_role("option", name=sites[0]).click()
+            option = page.locator('[role="option"]').filter(has_text=sites[0]).first
+            if option.count() > 0:
+                option.click()
+            else:
+                page.locator("#site-dropdown input").fill(sites[0])
+                page.locator("#site-dropdown input").press("Enter")
             page.wait_for_timeout(1200)
             page.screenshot(path=str(out / "dash_filtered_site.png"), full_page=True)
             browser.close()
