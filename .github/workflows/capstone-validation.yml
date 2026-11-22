@@ -5,6 +5,10 @@ on:
     branches: [main]
   workflow_dispatch:
 
+concurrency:
+  group: capstone-validation-main
+  cancel-in-progress: true
+
 permissions:
   contents: write
 
@@ -81,6 +85,7 @@ jobs:
             echo "No new evidence to commit."
           else
             git commit -m "Generate verified capstone analysis and dashboard evidence [skip ci]"
+            git pull --rebase origin main
             git push
           fi
 
