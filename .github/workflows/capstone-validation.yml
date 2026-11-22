@@ -41,10 +41,7 @@ jobs:
             --ExecutePreprocessor.timeout=900
 
       - name: Execute EDA visualization notebook
-        run: |
-          jupyter nbconvert --to notebook --execute IBM_Capstone_EDA_Visualization_Completed.ipynb \\
-            --output executed_eda_visualization.ipynb --output-dir outputs \\
-            --ExecutePreprocessor.timeout=600
+        run: jupyter nbconvert --to notebook --execute IBM_Capstone_EDA_Visualization_Completed.ipynb --output executed_eda_visualization.ipynb --output-dir outputs --ExecutePreprocessor.timeout=600
 
       - name: Execute Folium notebook
         run: |
