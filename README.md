@@ -8,9 +8,10 @@ This repository contains the notebooks, applications, and reproducible evidence 
 
 | Rubric area | Artifact | Purpose |
 |---|---|---|
-| SpaceX API collection | Course collection notebook / API lab | Retrieve and normalize historical launch records |
-| Web scraping | Course web-scraping lab | Extract the historical Falcon 9 launch table |
-| Data wrangling | data/dataset_part_2.csv, data/dataset_part_3.csv | Cleaned target data and one-hot encoded model features |
+| SpaceX API collection | [SpaceX_API_Data_Collection.ipynb](SpaceX_API_Data_Collection.ipynb) | Retrieve and normalize historical launch records |
+| Web scraping | [Web_Scraping_Falcon9_Launch_Records.ipynb](Web_Scraping_Falcon9_Launch_Records.ipynb) | Extract launch history from HTML tables |
+| Data wrangling | [Data_Wrangling_Completed.ipynb](Data_Wrangling_Completed.ipynb) | Missing-value treatment, target validation, feature selection and encoding |
+| SQL EDA | [EDA_SQL_Analysis_Completed.ipynb](EDA_SQL_Analysis_Completed.ipynb) | SQL queries for launch sites, payloads, outcomes, ranking and yearly trends |
 | EDA visualization | IBM_Capstone_EDA_Visualization_Completed.ipynb | Six required plots and supporting summary tables |
 | Machine learning | IBM_Capstone_ML_Completed.ipynb | Logistic Regression, SVM, Decision Tree, KNN, tuning, test metrics, confusion matrix |
 | Folium map | IBM_Capstone_Folium_Completed.ipynb and build_folium_map.py | Interactive launch-site map, launch markers, popups, clustering, layer controls |
