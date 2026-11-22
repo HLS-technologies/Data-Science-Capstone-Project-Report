@@ -40,6 +40,12 @@ jobs:
             --output executed_machine_learning.ipynb --output-dir outputs \
             --ExecutePreprocessor.timeout=900
 
+      - name: Execute EDA visualization notebook
+        run: |
+          jupyter nbconvert --to notebook --execute IBM_Capstone_EDA_Visualization_Completed.ipynb \\
+            --output executed_eda_visualization.ipynb --output-dir outputs \\
+            --ExecutePreprocessor.timeout=600
+
       - name: Execute Folium notebook
         run: |
           jupyter nbconvert --to notebook --execute IBM_Capstone_Folium_Completed.ipynb \
@@ -54,6 +60,12 @@ jobs:
           test -s outputs/selected_model_confusion_matrix.png
           test -s outputs/selected_model_confusion_matrix.csv
           test -s outputs/model_test_results.csv
+          test -s outputs/eda/01_flight_number_vs_launch_site.png
+          test -s outputs/eda/02_payload_mass_vs_launch_site.png
+          test -s outputs/eda/03_success_rate_by_orbit.png
+          test -s outputs/eda/04_flight_number_vs_orbit.png
+          test -s outputs/eda/05_payload_mass_vs_orbit.png
+          test -s outputs/eda/06_yearly_success_trend.png
           test -s outputs/spacex_launch_sites_map.html
           test -s outputs/screenshots/dash_default.png
           test -s outputs/screenshots/dash_filtered_site.png
