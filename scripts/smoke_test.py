@@ -32,10 +32,17 @@ def main():
     print("Pie traces:", len(pie.data), "| Scatter traces:", len(scatter.data))
 
     output = ROOT / "outputs" / "spacex_launch_sites_map.html"
-    _, site_summary, map_path = build_map(data_dir / "spacex_launch_geo.csv", output)
+    _, site_summary, proximity, map_path = build_map(
+        data_dir / "spacex_launch_geo.csv", output,
+        data_dir / "proximity_features.csv"
+    )
     assert map_path.exists() and map_path.stat().st_size > 10_000
+    assert len(proximity) == 16, f"Expected 16 course proximity points; got {len(proximity)}"
+    assert (ROOT / "outputs" / "proximity_analysis.csv").exists()
     print("Folium map:", map_path, "| Launch-site groups:", len(site_summary))
     print(site_summary.to_string(index=False))
+    print("Proximity distances (km):")
+    print(proximity.pivot(index="Launch Site", columns="Feature Type", values="Distance (km)").round(2))
 
 
 if __name__ == "__main__":
