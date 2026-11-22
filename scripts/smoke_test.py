@@ -3,6 +3,7 @@ from pathlib import Path
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "src"))
 
 from capstone_data import load_dash_frame
@@ -25,15 +26,13 @@ def main():
     assert len(filtered) > 0
     assert len(pie.data) > 0
     assert len(scatter.data) > 0
-    assert "Successful" in scatter.layout.yaxis.ticktext[1]
+    assert list(scatter.layout.yaxis.tickvals) == [0, 1]
     print("Dashboard data rows:", len(dash))
     print("Dashboard default summary:", summary)
     print("Pie traces:", len(pie.data), "| Scatter traces:", len(scatter.data))
 
     output = ROOT / "outputs" / "spacex_launch_sites_map.html"
-    _, site_summary, map_path = build_map(
-        data_dir / "spacex_launch_geo.csv", output
-    )
+    _, site_summary, map_path = build_map(data_dir / "spacex_launch_geo.csv", output)
     assert map_path.exists() and map_path.stat().st_size > 10_000
     print("Folium map:", map_path, "| Launch-site groups:", len(site_summary))
     print(site_summary.to_string(index=False))
